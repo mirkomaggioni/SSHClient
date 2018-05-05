@@ -79,7 +79,7 @@ namespace SSHClient
 
 				if (win32ex != null && win32ex.ErrorCode == 10048)
 				{
-					ProcessPorts.CleanPort(_sshport);
+					ConnectionsHelper.KillProcessByPortNumber(int.Parse(_sshport));
 					Connect();
 				}
 				else
